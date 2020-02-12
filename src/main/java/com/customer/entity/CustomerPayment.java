@@ -1,13 +1,6 @@
 package com.customer.entity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class CustomerPayment {
@@ -26,7 +19,7 @@ public class CustomerPayment {
 	
 	@ManyToOne
 	@JoinColumn(name="customer_id")
-	private Customer customer;
+	private User customer;
 	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "customerPayment")
 	private CustomerBilling customerBilling;
@@ -103,11 +96,11 @@ public class CustomerPayment {
 		this.defaultPayment = defaultPayment;
 	}
 
-	public Customer getCustomer() {
+	public User getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(User customer) {
 		this.customer = customer;
 	}
 
