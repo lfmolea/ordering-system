@@ -1,0 +1,36 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">New User</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">User Name:</label>
+      <input type="text" formControlName="username" placeholder="username" name="username" class="form-control" id="username">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="emailAddress">Email Address:</label>
+      <input formControlName="emailAddress" placeholder="emailAddress" name="emailAddress" class="form-control" id="emailAddress">
+    </div>
+
+    <div class="form-group">
+      <label for="contactDetail">Contact Detail:</label>
+      <input type="number" formControlName="contactDetail" placeholder="contactDetail" name="contactDetail" class="form-control" id="contactDetail">
+    </div>
+
+    <button class="btn btn-success">Add</button>
+  </form>
+</div>
