@@ -36,7 +36,7 @@ public class Order {
     private PaymentDetails paymentDetails;
 
     @ManyToOne
-    private Customer customer;
+    private User customer;
 
     public Long getId() {
         return id;
@@ -110,11 +110,11 @@ public class Order {
         this.paymentDetails = paymentDetails;
     }
 
-    public Customer getCustomer() {
+    public User getUser() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setUser(User customer) {
         this.customer = customer;
     }
 }

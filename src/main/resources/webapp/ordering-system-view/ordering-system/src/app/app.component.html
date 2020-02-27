@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home" class="btn btn-info">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact-list"class="btn btn-info">Contacts</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" routerLink="/products"class="btn btn-info">Products</a>
+    </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/add-product"class="btn btn-info">New Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/edit-product"class="btn btn-info">Change Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/list-user"class="btn btn-info">List Of Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/add-user"class="btn btn-info">New User</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login"class="btn btn-info">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <br>
+  <h2 style="text-align: center;">{{title}}</h2>
+  <hr>
+  <div class="card">
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <span>All Rights Lufuno Molea</span>
+  </div>
+</footer>

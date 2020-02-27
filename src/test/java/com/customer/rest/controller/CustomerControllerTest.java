@@ -1,7 +1,7 @@
 package com.customer.rest.controller;
 
 import com.customer.CustomerApplication;
-import com.customer.entity.Customer;
+import com.customer.entity.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,15 +37,16 @@ public class CustomerControllerTest {
     @Test
     public void authenticate()throws Exception{
 
-        Customer customer = new Customer();
-        customer.setUsername("lmolea");
-        customer.setEmailAddress("lmolea@gmail.com");
-        customer.setPassword("thendokhulu");
-        customer.setAddress("wwww");
+        User customer = new User();
+        customer.setUsername("tmmolea");
+        customer.setEmailAddress("ltmolea@gmail.com");
+        customer.setPassword("thendokhulu1");
+        customer.setContactDetail("0789662752");
 
-        mockMvc.perform(post("/customer/new").content(asJsonString(customer))
+        mockMvc.perform(post("/customers/new").content(asJsonString(customer))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
+
     }
 
     protected String asJsonString(final Object obj) throws Exception {

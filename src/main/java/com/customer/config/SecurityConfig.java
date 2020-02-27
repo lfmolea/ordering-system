@@ -1,6 +1,6 @@
 package com.customer.config;
 
-import com.customer.services.impl.CustomerSecurityService;
+import com.customer.services.impl.UserSecurityService;
 import com.customer.utility.SecurityUtility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private Environment env;
 
 	@Autowired
-	private CustomerSecurityService customerSecurityService;
+	private UserSecurityService customerSecurityService;
 
 	private BCryptPasswordEncoder passwordEncoder() {
 		return SecurityUtility.passwordEncoder();

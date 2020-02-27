@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-import com.customer.entity.Customer;
+import com.customer.entity.User;
 
 @Entity
 public class PasswordResetToken {
@@ -24,15 +24,23 @@ public class PasswordResetToken {
 	
 	private String token;
 	
-	@OneToOne(targetEntity = Customer.class, fetch = FetchType.EAGER)
+	@OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
 	@JoinColumn(nullable=false, name="user_id")
-	private Customer customer;
+	private User customer;
 	
 	private Date expiryDate;
 	
 	public PasswordResetToken(){}
-	
-	public PasswordResetToken(final String token, final Customer customer) {
+
+	public User getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(User customer) {
+		this.customer = customer;
+	}
+
+	public PasswordResetToken(final String token, final User customer) {
 		super ();
 		
 		this.token = token;
@@ -68,13 +76,6 @@ public class PasswordResetToken {
 		this.token = token;
 	}
 
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
 
 	public Date getExpiryDate() {
 		return expiryDate;
@@ -90,9 +91,11 @@ public class PasswordResetToken {
 
 	@Override
 	public String toString() {
-		return "PasswordResetToken [id=" + id + ", token=" + token + ", customer =" + customer + ", expiryDate=" + expiryDate
-				+ "]";
+		return "PasswordResetToken{" +
+				"id=" + id +
+				", token='" + token + '\'' +
+				", customer=" + customer +
+				", expiryDate=" + expiryDate +
+				'}';
 	}
-	
-	
 }

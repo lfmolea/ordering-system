@@ -1,6 +1,6 @@
 package com.customer.security;
 
-import com.customer.entity.Customer;
+import com.customer.entity.User;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,19 +19,19 @@ public class UserRole {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long userRoleId;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="customer_id")
-	private Customer customer;
-	
+	@JoinColumn(name="user_id")
+	private User user;
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="role_id")
 	private Role role;
-	
+
 	public UserRole(){}
-	
-	public UserRole(Customer customer, Role role) {
-		this.customer = customer;
+
+	public UserRole(User user, Role role) {
+		this.user = user;
 		this.role = role;
 	}
 
@@ -45,13 +45,16 @@ public class UserRole {
 		this.userRoleId = userRoleId;
 	}
 
-	public Customer getCustomer() {
-		return customer;
+
+	public User getUser() {
+		return user;
 	}
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+
+	public void setUser(User user) {
+		this.user = user;
 	}
+
 
 	public Role getRole() {
 		return role;
@@ -61,7 +64,7 @@ public class UserRole {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
-	
+
+
 }
 

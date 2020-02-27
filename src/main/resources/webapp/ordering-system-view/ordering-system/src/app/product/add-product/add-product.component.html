@@ -1,0 +1,49 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">New Product</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="productName">Product Name:</label>
+      <input type="text" formControlName="productName" placeholder="productName" name="productName" class="form-control" id="productName">
+    </div>
+
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <input type="type" formControlName="type" placeholder="type" name="type" class="form-control" id="type">
+    </div>
+
+    <div class="form-group">
+      <label for="color">Color:</label>
+      <input formControlName="color" placeholder="color" name="color" class="form-control" id="color">
+    </div>
+
+    <div class="form-group">
+      <label for="barcode">Barcode:</label>
+      <input type="number" formControlName="barcode" placeholder="barcode" name="barcode" class="form-control" id="barcode">
+    </div>
+
+    <div class="form-group">
+      <label for="numberOfItems">Number Of Items:</label>
+      <input type="number" formControlName="numberOfItems" placeholder="numberOfItems" name="numberOfItems" class="form-control" id="numberOfItems">
+    </div>
+
+    <div class="form-group">
+      <label for="listPrice">List Price:</label>
+      <input type="number" formControlName="listPrice" placeholder="listPrice" name="listPrice" class="form-control" id="listPrice">
+    </div>
+    <div class="form-group">
+      <label for="ourPrice">Our Price:</label>
+      <input type="number" formControlName="ourPrice" placeholder="ourPrice" name="ourPrice" class="form-control" id="ourPrice">
+    </div>
+    <div class="form-group">
+      <label for="active">Availlable:</label>
+      <input type="number" formControlName="active" placeholder="active" name="active" class="form-control" id="active">
+    </div>
+
+    <button class="btn btn-success">Add</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newProduct()">Add</button> -->
+</div>
